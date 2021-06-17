@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Manager</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+
+  
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+  
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+</head>
+<body>
+  
+  <div id="header"></div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="../home_click/index.html">
+                <span data-feather="home"></span>
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../course_click/index.html">
+                <span data-feather="users"></span>
+                Lecturer
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../student_click/index.html">
+                <span data-feather="users"></span>
+                Student
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../course_click/index.html">
+                <span data-feather="book-open"></span>
+                Course
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../managefee_click/index.html">
+                <span data-feather="dollar-sign"></span>
+                Manage Fee
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../notification_click/index.html">
+                <span data-feather="bell"></span>
+                Notifications
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <span data-feather="clipboard"></span>
+                Section class
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="padding: 48px 24px;">
+        <h2 class="border-bottom">Section class information</h2>
+        <div class="input-group">
+          <form class='d-flex'>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm" style="margin-top: 30px;">
+            <thead>
+              <tr>
+                <th scope="col">ClassID</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Room</th>
+                <th scope="col">Credits</th>
+                <th scope="col">Lecturer</th>
+                <th scope="col">Attended</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">DMBS0123CLC</th>
+                <td>Database management system</td>
+                <td>A1-103</td>
+                <td>3</td>
+                <td>Micha Le</td>
+                <td>20</td>
+                <td>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
+                    Edit
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-4 position-relative">
+                              <label for="validationTooltip01" class="form-label">ClassID</label>
+                              <input type="text" class="form-control" id="validationTooltip01" value="DBMSBlaaa" required>
+                            </div>
+                            <div class="col-md-4 position-relative">
+                              <label for="validationTooltip03" class="form-label">Credits</label>
+                              <input type="text" class="form-control" id="validationTooltip03" value="3" required readonly>
+                            </div>
+                            <div class="col-md-12 position-relative">
+                              <label for="validationTooltip02" class="form-label">Attended</label>
+                              <input type="text" class="form-control" id="validationTooltip02" value="20" required>
+                            </div>
+                            <div class="col-md-12 position-relative">
+                              <label for="validationTooltip02" class="form-label">Course Name</label>
+                              <input type="text" class="form-control" id="validationTooltip02" value="Database management system" required>
+                            </div>
+                            <div class="col-md-12 position-relative">
+                              <label for="validationTooltip02" class="form-label">Lecturer</label>
+                              <input type="text" class="form-control" id="validationTooltip02" value="Le Thi Minh Chau" required>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-secondary">Remove</button>
+                  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ViewModal">
+                    View profile
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="ViewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-4 position-relative">
+                              <label for="validationTooltip01" class="form-label">ClassID</label>
+                              <input type="text" class="form-control" id="validationTooltip01" value="DBMSBlaaa" required readonly>
+                            </div>
+                            <div class="col-md-4 position-relative">
+                              <label for="validationTooltip01" class="form-label">Room</label>
+                              <input type="text" class="form-control" id="validationTooltip01" value="A2-103" required readonly>
+                            </div>
+                            <div class="col-md-4 position-relative">
+                              <label for="validationTooltip03" class="form-label">Credits</label>
+                              <input type="text" class="form-control" id="validationTooltip03" value="3" required readonly readonly>
+                            </div>
+                            <div class="col-md-12 position-relative">
+                              <label for="validationTooltip02" class="form-label">Attended</label>
+                              <input type="text" class="form-control" id="validationTooltip02" value="20" required readonly>
+                            </div>
+                            <div class="col-md-12 position-relative">
+                              <label for="validationTooltip02" class="form-label">Course Name</label>
+                              <input type="text" class="form-control" id="validationTooltip02" value="Database management system" required readonly>
+                            </div>
+                            <div class="col-md-12 position-relative">
+                              <label for="validationTooltip02" class="form-label">Lecturer</label>
+                              <input type="text" class="form-control" id="validationTooltip02" value="Le Thi Minh Chau" required readonly>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#AddModal">
+          <span data-feather="plus"></span>
+          Add new class
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add section class</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form class="row g-3 needs-validation" novalidate>
+                  <div class="col-md-4 position-relative">
+                    <label for="validationTooltip01" class="form-label">ClassID</label>
+                    <input type="text" class="form-control" id="validationTooltip01" value="DBMSBlaaa" required>
+                  </div>
+                  <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">Credits</label>
+                    <input type="text" class="form-control" id="validationTooltip03" value="3" required>
+                  </div>
+                  <div class="col-md-12 position-relative">
+                    <label for="validationTooltip02" class="form-label">Attended</label>
+                    <input type="text" class="form-control" id="validationTooltip02" value="20" required>
+                  </div>
+                  <div class="col-md-12 position-relative">
+                    <label for="validationTooltip02" class="form-label">Course Name</label>
+                    <input type="text" class="form-control" id="validationTooltip02" value="Database management system" required>
+                  </div>
+                  <div class="col-md-12 position-relative">
+                    <label for="validationTooltip02" class="form-label">Lecturer</label>
+                    <select class="form-control" id="validationTooltip02">
+                      <option selected>Choose...</option>
+                      <option value="1">Lecturer 1</option>
+                      <option value="2">Lecturer 2</option>
+                      <option value="3">Lecturer 3</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+  <script src="../../Component/component.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="main.js"></script>
+</body>
+</html>

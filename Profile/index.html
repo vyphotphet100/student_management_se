@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Manager</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+
+  
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+  
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <form method="post" style="margin-top: 100px;">
+    <button type="button" class="btn-close" aria-label="Close"></button>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img">
+          <img src="https://scontent-xsp1-2.xx.fbcdn.net/v/t1.6435-9/133480305_1025775777934271_8384115018610540736_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=174925&_nc_ohc=M2O24eMyJrEAX_jEnmp&_nc_ht=scontent-xsp1-2.xx&oh=22d2bea90874defdc4781c263f7577d9&oe=60D32B6D" alt=""/>
+          <div class="file btn btn-lg btn-primary">
+            Change Photo
+            <input type="file" name="file"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-head">
+          <h5>
+            Nguyễn Thiên Hoàn
+          </h5>
+          <h6>
+            Student
+          </h6>
+          <br>
+          <br>
+          <br>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Student's information</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="tab-content profile-tab" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="margin-left: 520px; margin-top: -80px;">
+          <div class="row">
+            <div class="col-md-6">
+              <label>Student ID</label>
+            </div>
+            <div class="col-md-6">
+              <p>19110078</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Name</label>
+            </div>
+            <div class="col-md-6">
+              <p>Nguyễn Thiên Hoàn</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Email</label>
+            </div>
+            <div class="col-md-6">
+              <p>19110078@student.hcmute.edu.vn</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Phone</label>
+            </div>
+            <div class="col-md-6">
+              <p>0794676336</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>           
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="main.js"></script>
+</body>
+</html>

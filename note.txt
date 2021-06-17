@@ -1,0 +1,11 @@
+-Import Mark (Nhanh) done
+-Add new noti + Edit (done)
+-Name lecturer in timetable (Student) (done)
+-See full noti(done)
+-Delete button edit remove in section class (lecturer) (done)
+-Change Semester into End-term (done)
+-Avatar (edit + add lecture + Student) (done)
+-Click name => profile (done)
+-Add lecturer (section class) Textbox (Lecturer) => List box (done)
+-Profile của section class (done)
+-Search bar quăng từ trên xuống dưới + button search (done)

@@ -1,0 +1,299 @@
+body {
+  font-size: .875rem;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  /* rtl:raw:
+  right: 0;
+  */
+  bottom: 0;
+  /* rtl:remove */
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 48px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+/*dropdown for sign out*/
+/* Kiểu nút Dropdown */
+.dropbtn {
+  background-color: rgba(255, 255, 255, .1);
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  font-size: 16px;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+/* Dùng trong <div> để định vị nội dung thả xuống */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Nội dung thả xuống (Ẩn theo mặc định) */
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Liên kết bên trong danh sách thả xuống */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Thay đổi định dạng của liên kết thả xuống khi di chuột qua */
+.dropdown-content a:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+/* Hiển thị menu thả xuống khi di chuột */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Thay đổi màu nền của nút thả xuống khi nội dung được hiển thị */
+.dropdown:hover .dropbtn {
+  background-color: rgba(45, 42, 48, 0.1);
+}
+body {
+  overflow-x: hidden;
+}
+
+/*timetable*/
+.idance .classes-details ul.timetable {
+    margin: 0 0 22px;
+    padding: 0;
+}
+.idance .classes-details ul.timetable li {
+    list-style: none;
+    font-size: 15px;
+    color: #7f7f7f;
+}
+.idance .timetable {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.idance .timetable-item {
+    border: 1px solid #d8e3eb;
+    padding: 15px;
+    margin-top: 20px;
+    position: relative;
+    display: block;
+}
+@media (min-width: 768px) {
+    .idance .timetable-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+.idance .timetable-item-img {
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+    display: none;
+}
+.idance .timetable-item-img img {
+    height: 100%;
+}
+@media (min-width: 768px) {
+    .idance .timetable-item-img {
+        display: block;
+    }
+}
+.idance .timetable-item-main {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    margin-top: 12px;
+}
+@media (min-width: 768px) {
+    .idance .timetable-item-main {
+        margin-top: 0;
+        padding-left: 15px;
+    }
+}
+.idance .timetable-item-time {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+.idance .timetable-item-name {
+    font-size: 14px;
+    margin-bottom: 19px;
+}
+.idance .btn-book {
+    padding: 6px 30px;
+    width: 100%;
+}
+.idance .timetable-item-like {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.idance .timetable-item-like .fa-heart-o {
+    display: block;
+    color: #b7b7b7;
+}
+.idance .timetable-item-like .fa-heart {
+    display: none;
+    color: #f15465;
+}
+.idance .timetable-item-like:hover .fa-heart {
+    display: block;
+}
+.idance .timetable-item-like:hover .fa-heart-o {
+    display: none;
+}
+.idance .timetable-item-like-count {
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5px;
+    color: #7f7f7f;
+}
+.idance .timetable-item-book {
+    width: 200px;
+}
+.idance .timetable-item-book .btn {
+    width: 100%;
+}
+.idance .schedule .nav-tabs {
+    border-bottom: 2px solid #104455;
+}
+.idance .schedule .nav-link {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #3d3d3d;
+    font-weight: 500;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+    border-radius: 2px 2px 0 0;
+    padding-left: 0;
+    padding-right: 0;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .idance .schedule .nav-link {
+        font-size: 16px;
+    }
+}
+.idance .schedule .nav-link.active {
+    background: #104455;
+    border-color: #104455;
+    color: #fff;
+}
+.idance .schedule .nav-link.active:focus {
+    border-color: #104455;
+}
+.idance .schedule .nav-link:hover:not(.active) {
+    background: #46c1be;
+    border-color: #46c1be;
+    color: #fff;
+}
+.idance .schedule .tab-pane {
+    padding-top: 10px;
+}
+

@@ -1,9 +1,3 @@
-(function() {
-    'use strict'
-
-    feather.replace();
-})();
-
 function loadNotification() {
     var notiStr =
         '<div class="feature col">' +
@@ -34,7 +28,7 @@ function loadNotification() {
 function activeSidebar() {
     setTimeout(function() {
         document.getElementsByClassName('nav-link')[0].className += ' active';
-    }, 500);
+    }, 1000);
 }
 
 function main() {

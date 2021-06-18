@@ -109,4 +109,22 @@ class StudentRequest {
             }
         }).responseJSON.listResult;
     }
+
+    static getRegisteredSectionClassByWeekday(weekday) {
+        var studentId = userDto.id;
+        return $.ajax({
+            url: connecter.baseUrlAPI + '/api/student/' + studentId + '/registered_section_class/weekday/' + weekday,
+            type: 'GET',
+            async: false,
+            headers: { 'Authorization': 'Token ' + connecter.getCookie('tokenCode') },
+            contentType: 'application/json',
+            success: function(result) {
+                return result;
+            },
+            error: function(error) {
+                BaseRequest.authorization(error);
+                return error;
+            }
+        }).responseJSON.listResult;
+    }
 }

@@ -89,4 +89,21 @@ class RegisterRequest {
             }
         }).responseJSON;
     }
+
+    static findAllByStudentId(studentId) {
+        return $.ajax({
+            url: connecter.baseUrlAPI + '/api/register/student_id/' + studentId,
+            type: 'GET',
+            async: false,
+            headers: { 'Authorization': 'Token ' + connecter.getCookie('tokenCode') },
+            contentType: 'application/json',
+            success: function(result) {
+                return result;
+            },
+            error: function(error) {
+                BaseRequest.authorization(error);
+                return error;
+            }
+        }).responseJSON.listResult;
+    }
 }

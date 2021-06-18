@@ -1,53 +1,36 @@
-/* globals Chart:false, feather:false */
+function loadRegister() {
+    var registerCard =
+        '<tr>' +
+        '  <th scope="row">SECTION_CLASS_ID</th>' +
+        '  <td>COURSE_NAME</td>' +
+        '  <td>NUM_OF_CREDIT</td>' +
+        '  <td>MID_TERM</td>' +
+        '  <td>END_TERM</td>' +
+        '</tr>';
 
-(function () {
-  'use strict'
+    var registerDtos = RegisterRequest.findAllByStudentId(userDto.id);
+    for (var i = 0; i < registerDtos.length; i++) {
+        var registerCardTmp = registerCard;
+        var sectionClassDto = SectionClassRequest.findOne(registerDtos[i].sectionClassId);
+        var courseDto = CourseRequest.findOne(sectionClassDto.courseId);
 
-  feather.replace()
-
-  // Graphs
-  var ctx = document.getElementById('myChart')
-  // eslint-disable-next-line no-unused-vars
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ],
-      datasets: [{
-        data: [
-          15339,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034
-        ],
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#007bff'
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: false
-          }
-        }]
-      },
-      legend: {
-        display: false
-      }
+        registerCardTmp = registerCardTmp.replace('SECTION_CLASS_ID', sectionClassDto.id);
+        registerCardTmp = registerCardTmp.replace('COURSE_NAME', courseDto.name);
+        registerCardTmp = registerCardTmp.replace('NUM_OF_CREDIT', courseDto.numberOfCredit);
+        registerCardTmp = registerCardTmp.replace('MID_TERM', registerDtos[i].midTermMark);
+        registerCardTmp = registerCardTmp.replace('END_TERM', registerDtos[i].endTermMark);
+        document.getElementById('register-card').innerHTML += registerCardTmp;
     }
-  })
-})()
+}
+
+function activeSidebar() {
+    setTimeout(function() {
+        document.getElementsByClassName('nav-link')[4].className += ' active';
+    }, 1000);
+}
+
+function main() {
+    loadRegister();
+    activeSidebar();
+}
+main();

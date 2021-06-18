@@ -28,7 +28,7 @@ function loadRegisteredClass() {
 function activeSidebar() {
     setTimeout(function() {
         document.getElementsByClassName('nav-link')[3].className += ' active';
-    }, 500);
+    }, 1000);
 }
 
 function main() {

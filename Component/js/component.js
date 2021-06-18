@@ -26,9 +26,10 @@ $(document).ready(function() {
             $("#sidebarMenu").load('../../Component/sidebar-student.html', load);
 
         $("#header").load('../../Component/topbar-student.html', load);
-    } else if (window.location.href.includes('/manager/'))
+    } else if (window.location.href.includes('/manager/')) {
         $("#sidebarMenu").load('../../Component/sidebar-manager.html', load);
-    else if (window.location.href.includes('/lecturer/'))
+        $("#header").load('../../Component/topbar-manager.html', load);
+    } else if (window.location.href.includes('/lecturer/'))
         $("#sidebarMenu").load('../../Component/sidebar-lecturer.html', load);
 
 })

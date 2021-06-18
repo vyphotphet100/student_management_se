@@ -26,14 +26,9 @@ class connecter {
     }
 
     static logout() {
-        $.ajax({
-            url: connecter.baseUrlAPI + '/log_out',
-            type: 'GET',
-            async: false,
-            contentType: 'application/json',
-        });
         connecter.setCookie('username', null, 1);
         connecter.setCookie('tokenCode', null, 1);
+        window.location.href = connecter.basePathAfterUrl + '/loginpage';
     }
 
     static setCookie(cname, cvalue, exMinutes) {

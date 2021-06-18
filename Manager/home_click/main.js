@@ -1,9 +1,3 @@
-(function() {
-    'use strict'
-
-    feather.replace();
-})();
-
 function loadNotification() {
     var notiStr =
         '<div class="feature col">' +

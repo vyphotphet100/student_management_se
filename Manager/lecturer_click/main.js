@@ -56,6 +56,7 @@ function viewProfile(lecturerId) {
     document.getElementById('lecturer-birthday').innerText = d.toLocaleDateString();
     document.getElementById('lecturer-address').innerText = lecturerDto.address;
     document.getElementById('lecturer-phone').innerText = lecturerDto.phoneNumber;
+    document.getElementById('lecturer-avatar').src = connecter.baseUrlAPI + lecturerDto.picture + '?option=getFile';
 }
 
 function viewEdit(lecturerId) {
@@ -89,13 +90,27 @@ function addNewLecturer() {
         fullname: document.getElementById('lecturer-input-add-fullname').value,
         address: document.getElementById('lecturer-input-add-address').value,
         birthday: document.getElementById('lecturer-input-add-birthday').value,
-        phoneNumber: document.getElementById('lecturer-input-add-phone').value,
+        phoneNumber: document.getElementById('lecturer-input-add-phone').value
     };
 
     lecturerDto = LecturerRequest.save(lecturerDto);
     alert(lecturerDto.message);
-    if (lecturerDto.httpStatus == "OK")
+    if (lecturerDto.httpStatus == "OK") {
+        var lecturerId = lecturerDto.id;
+        // up avatar
+        var fileDto = {
+            fileName: lecturerId + '/avatar',
+            fileType: 'png',
+            base64String: base64AddLecturerAvatar.value
+        }
+        var lecturerAvaDto = LecturerRequest.upFile(fileDto);
+        lecturerDto = LecturerRequest.findOne(lecturerId);
+        lecturerDto.picture = lecturerAvaDto.listResult[0];
+        LecturerRequest.update(lecturerDto);
+
         location.reload();
+    }
+
 }
 
 function removeLecturer(lecturerId) {
@@ -108,4 +123,28 @@ function removeLecturer(lecturerId) {
         return;
     }
     location.reload();
+}
+
+// get base64 string of uploaded add student avatar
+var avatarAddLecturerFile = document.getElementById('lecturer-add-avatar-file');
+var base64AddLecturerAvatar = document.createElement("INPUT");
+base64AddLecturerAvatar.setAttribute("type", "hidden");
+
+avatarAddLecturerFile.onchange = evt => {
+    const [file] = avatarAddLecturerFile.files
+    if (file) {
+        document.getElementById('lecturer-add-avatar').src = URL.createObjectURL(file);
+
+        // get base64 
+        let data = avatarAddLecturerFile.files[0];
+
+        const readerAsBase64 = new FileReader();
+        readerAsBase64.onloadend = () => {
+            // use a regex to remove data url part
+            base64AddLecturerAvatar.value = readerAsBase64.result
+                .replace("data:", "")
+                .replace(/^.+,/, "");
+        };
+        readerAsBase64.readAsDataURL(data);
+    }
 }

@@ -99,7 +99,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="profile-img">
-                                    <img src="https://scontent-xsp1-2.xx.fbcdn.net/v/t1.6435-9/133480305_1025775777934271_8384115018610540736_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=174925&_nc_ohc=M2O24eMyJrEAX_jEnmp&_nc_ht=scontent-xsp1-2.xx&oh=22d2bea90874defdc4781c263f7577d9&oe=60D32B6D" />
+                                    <img id="lecturer-avatar" src="#" />
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -239,6 +239,11 @@
                         <div class="col-md-12 position-relative">
                             <label for="validationTooltip02" class="form-label">Address</label>
                             <input type="text" class="form-control" id="lecturer-input-add-address" value="" required>
+                        </div>
+                        <div class="col-md-12 position-relative">
+                            <label for="validationTooltip02" class="form-label">Avatar</label>
+                            <input class="form-control" accept="image/*" type='file' id="lecturer-add-avatar-file" required>
+                            <img class="form-control" id="lecturer-add-avatar" src="#" style="width: 250px; height: 250px;" />
                         </div>
                     </div>
                 </div>

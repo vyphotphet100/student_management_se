@@ -127,4 +127,40 @@ class StudentRequest {
             }
         }).responseJSON.listResult;
     }
+
+    static findAllBySectionClassId(sectionClassId) {
+        return $.ajax({
+            url: connecter.baseUrlAPI + '/api/student/section_class_id/' + sectionClassId,
+            type: 'GET',
+            async: false,
+            headers: { 'Authorization': 'Token ' + connecter.getCookie('tokenCode') },
+            contentType: 'application/json',
+            success: function(result) {
+                return result;
+            },
+            error: function(error) {
+                BaseRequest.authorization(error);
+                return error;
+            }
+        }).responseJSON.listResult;
+    }
+
+    static upFile(fileDto) {
+        return $.ajax({
+            url: connecter.baseUrlAPI + '/api/file/student',
+            type: 'POST',
+            async: false,
+            headers: { 'Authorization': 'Token ' + connecter.getCookie('tokenCode') },
+            contentType: 'application/json',
+            data: JSON.stringify(fileDto),
+            dataType: 'json',
+            success: function(result) {
+                return result;
+            },
+            error: function(error) {
+                BaseRequest.authorization(error);
+                return error;
+            }
+        }).responseJSON;
+    }
 }

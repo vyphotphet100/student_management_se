@@ -4,16 +4,18 @@
     <span class="navbar-toggler-icon"></span>
     </button>
     <div style="float: right;">
-        <div class="dropdown">
-            <button class="dropbtn">
-            <span data-feather="user"></span>			
-        </button>
+        <div class="dropdown" style="display: inline-block;">
+            <div class="dropbtn">
+                <span data-feather="user"></span>
+            </div>
             <div class="dropdown-content">
                 <a href="#">View profile</a>
                 <a href="javascript:connecter.logout();">Sign out</a>
             </div>
         </div>
-        <a class="navbar-brand col col me-0 px-3" id="user-fullname">Fullname</a>
+        <div style="display: inline-block;">
+            <a class="navbar-brand col col me-0 px-3" id="user-fullname" style="color: beige;">Fullname</a>
+        </div>
     </div>
 
 </header>

@@ -91,4 +91,23 @@ class LecturerRequest {
             }
         }).responseJSON;
     }
+
+    static upFile(fileDto) {
+        return $.ajax({
+            url: connecter.baseUrlAPI + '/api/file/lecturer',
+            type: 'POST',
+            async: false,
+            headers: { 'Authorization': 'Token ' + connecter.getCookie('tokenCode') },
+            contentType: 'application/json',
+            data: JSON.stringify(fileDto),
+            dataType: 'json',
+            success: function(result) {
+                return result;
+            },
+            error: function(error) {
+                BaseRequest.authorization(error);
+                return error;
+            }
+        }).responseJSON;
+    }
 }

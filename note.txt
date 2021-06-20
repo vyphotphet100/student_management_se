@@ -9,6 +9,3 @@
 -Add lecturer (section class) Textbox (Lecturer) => List box (done)
 -Profile của section class (done)
 -Search bar quăng từ trên xuống dưới + button search (done)
-
-
-- Còn phần add new lecturer 

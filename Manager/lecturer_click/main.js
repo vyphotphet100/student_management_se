@@ -13,7 +13,7 @@ function loadLecturer() {
                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal" onclick="viewEdit(ID);">
                   Edit
                 </button>
-                <button type="button" class="btn btn-secondary">Remove</button>
+                <button type="button" class="btn btn-secondary" onclick="removeLecturer(ID);">Remove</button>
             </td>
         </tr>`;
 
@@ -21,6 +21,7 @@ function loadLecturer() {
     for (var i = 0; i < lecturerDtos.length; i++) {
         var lecturerCardTmp = lecturerCard;
 
+        lecturerCardTmp = lecturerCardTmp.replace('ID', lecturerDtos[i].id);
         lecturerCardTmp = lecturerCardTmp.replace('ID', lecturerDtos[i].id);
         lecturerCardTmp = lecturerCardTmp.replace('ID', lecturerDtos[i].id);
         lecturerCardTmp = lecturerCardTmp.replace('ID', lecturerDtos[i].id);
@@ -95,4 +96,16 @@ function addNewLecturer() {
     alert(lecturerDto.message);
     if (lecturerDto.httpStatus == "OK")
         location.reload();
+}
+
+function removeLecturer(lecturerId) {
+    if (!confirm("Are you sure to delete this lecturer?"))
+        return;
+
+    var lecturerDto = LecturerRequest.delete(lecturerId);
+    if (lecturerDto.httpStatus != "OK") {
+        alert(lecturerDto.message);
+        return;
+    }
+    location.reload();
 }

@@ -3,7 +3,7 @@ class BaseRequest {
         if (result.responseJSON.exception != null &&
             result.responseJSON.exception.includes('AccessDeniedException')) {
             alert(result.responseJSON.message);
-            window.location.href = connecter.basePathAfterUrl + "/loginpage/index.html";
+            window.location.href = connecter.basePathAfterUrl + "/LoginPage/index.html";
         }
     }
 

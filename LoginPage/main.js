@@ -21,11 +21,11 @@ $('.btn-sign-in').click(function() {
         }
         if (userDto.httpStatus == 'OK') {
             if (userDto.roleCode == 'ADMIN')
-                window.location.href = 'manager/home_click/index.html';
+                window.location.href = connecter.basePathAfterUrl + '/manager/home_click/index.html';
             else if (userDto.roleCode == 'STUDENT')
-                window.location.href = 'student/home_click/home.html';
+                window.location.href = connecter.basePathAfterUrl + '/student/home_click/home.html';
             else if (userDto.roleCode == 'LECTURER')
-                window.location.href = 'lecturer/home_click/home.html';
+                window.location.href = connecter.basePathAfterUrl + '/lecturer/home_click/home.html';
         }
     }, 10);
 

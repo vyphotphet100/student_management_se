@@ -1,6 +1,6 @@
 class connecter {
 
-    static baseUrlAPI = "http://8be0b7c8580a.ngrok.io";
+    static baseUrlAPI = "https://8be0b7c8580a.ngrok.io";
     static basePathAfterUrl = "/student_management";
 
     static authorization() {

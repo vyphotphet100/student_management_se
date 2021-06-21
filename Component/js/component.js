@@ -13,7 +13,13 @@ $(document).ready(function() {
         $("#sidebarMenu").load('../../Component/sidebar-manager.html', load);
         $("#header").load('../../Component/topbar-manager.html', load);
     } else if (window.location.href.includes('/lecturer/')) {
-        $("#sidebarMenu").load('../../Component/sidebar-lecturer.html', load);
+        if (window.location.href.includes('/timetable_click/')) {
+            $("#sidebarMenu").load('../../../Component/sidebar-lecturer.html', load);
+            $("#header").load('../../../Component/topbar-lecturer.html', load);
+        } else {
+            $("#header").load('../../Component/topbar-lecturer.html', load);
+            $("#sidebarMenu").load('../../Component/sidebar-lecturer.html', load);
+        }
     }
 
 

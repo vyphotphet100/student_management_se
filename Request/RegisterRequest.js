@@ -106,4 +106,38 @@ class RegisterRequest {
             }
         }).responseJSON.listResult;
     }
+
+    static findOneByStudentIdAndSectionClassId(studentId, sectionClassId) {
+        return $.ajax({
+            url: connecter.baseUrlAPI + '/api/register/student_id/' + studentId + "/section_class_id/" + sectionClassId,
+            type: 'GET',
+            async: false,
+            headers: { 'Authorization': 'Token ' + connecter.getCookie('tokenCode') },
+            contentType: 'application/json',
+            success: function(result) {
+                return result;
+            },
+            error: function(error) {
+                BaseRequest.authorization(error);
+                return error;
+            }
+        }).responseJSON;
+    }
+
+    static exportBySectionClassId(sectionClassId) {
+        return $.ajax({
+            url: connecter.baseUrlAPI + '/api/file/register/section_class_id/' + sectionClassId + '?option=print',
+            type: 'GET',
+            async: false,
+            headers: { 'Authorization': 'Token ' + connecter.getCookie('tokenCode') },
+            contentType: 'application/json',
+            success: function(result) {
+                return result;
+            },
+            error: function(error) {
+                BaseRequest.authorization(error);
+                return error;
+            }
+        }).responseJSON;
+    }
 }

@@ -1,29 +1,37 @@
 <div class="position-sticky pt-3">
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link" href="javascript:hrefSideBar('../home_click/home.html');">
                 <span data-feather="home"></span> Home
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../student_click/student.html">
+            <a class="nav-link" href="javascript:hrefSideBar('../student_click/student.html');">
                 <span data-feather="users"></span> Student
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../timetable_click/Monday/timetable.html">
+            <a class="nav-link" href="javascript:hrefSideBar('../timetable_click/Monday/timetable.html');">
                 <span data-feather="calendar"></span> Timetable
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../sectionclass_click/sectionClass.html">
+            <a class="nav-link" href="javascript:hrefSideBar('../sectionclass_click/sectionClass.html');">
                 <span data-feather="clipboard"></span> Section class
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../mark_click/mark.html">
+            <a class="nav-link" href="javascript:hrefSideBar('../mark_click/mark.html');">
                 <span data-feather="edit"></span> Mark management
             </a>
         </li>
     </ul>
 </div>
+<script>
+    function hrefSideBar(link) {
+        if (window.location.href.includes('/timetable_click/'))
+            window.location.href = '../' + link;
+        else
+            window.location.href = link;
+    }
+</script>

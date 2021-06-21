@@ -1,53 +1,43 @@
-/* globals Chart:false, feather:false */
+function loadTimetable() {
+    var sectionClassCard =
+        '  <div class="col-md-6">' +
+        '    <div class="timetable-item">' +
+        '      <div class="timetable-item-img">' +
+        '        <img src="AVT_SRC">' +
+        '      </div>' +
+        '      <div class="timetable-item-main">' +
+        '        <div class="timetable-item-time">START_TIME - END_TIME</div>' +
+        '        <div class="timetable-item-name">COURSE_NAME</div>' +
+        '        <div class="timetable-item-name" style="font-size: 20px;">Room: ROOM</div>' +
+        '      </div>' +
+        '    </div>' +
+        '  </div>';
 
-(function () {
-  'use strict'
+    document.getElementById('timetable-card').innerHTML = '';
+    var sectionClassDtos = LecturerRequest.getRegisteredSectionClassByWeekday(3);
+    for (var i = 0; i < sectionClassDtos.length; i++) {
+        var sectionClassCardTmp = sectionClassCard;
+        // get course
+        var courseDto = CourseRequest.findOne(sectionClassDtos[i].courseId);
 
-  feather.replace()
-
-  // Graphs
-  var ctx = document.getElementById('myChart')
-  // eslint-disable-next-line no-unused-vars
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ],
-      datasets: [{
-        data: [
-          15339,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034
-        ],
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#007bff'
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: false
-          }
-        }]
-      },
-      legend: {
-        display: false
-      }
+        sectionClassCardTmp = sectionClassCardTmp.replace('AVT_SRC', connecter.baseUrlAPI + userDto.picture + '?option=getFile');
+        sectionClassCardTmp = sectionClassCardTmp.replace('START_TIME', sectionClassDtos[i].startTime);
+        sectionClassCardTmp = sectionClassCardTmp.replace('END_TIME', sectionClassDtos[i].endTime);
+        sectionClassCardTmp = sectionClassCardTmp.replace('COURSE_NAME', courseDto.name);
+        sectionClassCardTmp = sectionClassCardTmp.replace('ROOM', sectionClassDtos[i].room);
+        document.getElementById('timetable-card').innerHTML += sectionClassCardTmp;
     }
-  })
-})()
+
+}
+
+function activeSidebar() {
+    setTimeout(function() {
+        document.getElementsByClassName('nav-link')[2].className += ' active';
+    }, 1000);
+}
+
+function main() {
+    loadTimetable();
+    activeSidebar();
+}
+main();

@@ -110,4 +110,22 @@ class LecturerRequest {
             }
         }).responseJSON;
     }
+
+    static getRegisteredSectionClassByWeekday(weekday) {
+        var lecturerId = userDto.id;
+        return $.ajax({
+            url: connecter.baseUrlAPI + '/api/lecturer/' + lecturerId + '/registered_section_class/weekday/' + weekday,
+            type: 'GET',
+            async: false,
+            headers: { 'Authorization': 'Token ' + connecter.getCookie('tokenCode') },
+            contentType: 'application/json',
+            success: function(result) {
+                return result;
+            },
+            error: function(error) {
+                BaseRequest.authorization(error);
+                return error;
+            }
+        }).responseJSON.listResult;
+    }
 }

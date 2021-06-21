@@ -1,185 +1,155 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <title>Student</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Student</title>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
 
-  
-  <!-- Custom styles for this template -->
-  <link href="style.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
+
 <body>
-  
-  <div id="header"></div>
 
-  <div class="container-fluid">
-    <div class="row">
-      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-        <div class="position-sticky pt-3">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link" href="../home_click/home.html">
-                <span data-feather="home"></span>
-                Home
-              </a> 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../student_click/student.html">
-                <span data-feather="users"></span>
-                Student
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../timetable_click/Monday/timetable.html">
-                <span data-feather="calendar"></span>
-                Timetable
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../sectionclass_click/sectionClass.html">
-                <span data-feather="clipboard"></span>
-                Section class
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">
-                <span data-feather="edit"></span>
-                Mark management
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <div id="header"></div>
 
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="padding: 48px 24px;">
-        <h2 class="pb-2 border-bottom">Student's mark</h2>
-        <div class="input-group col">
-          <form class='d-flex'>
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-secondary" type="submit">Search</button>
-          </form>
-          <div class="dropdown" style="margin-left: 700px;">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Choose section class
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">DBMS0123</a></li>
-              <li><a class="dropdown-item" href="#">DMGM3456</a></li>
-              <li><a class="dropdown-item" href="#">CAL22345</a></li>
-              <li><a class="dropdown-item" href="#">SXTK2458</a></li>
-            </ul>         
-          </div>
-        </div>
-        <div class="table-responsive">
-          <table class="table table-striped table-sm" style="margin-top: 30px;">
-            <thead>
-              <tr>
-                <th scope="col">Student ID</th>
-                <th scope="col">First name</th>
-                <th scope="col">Last name</th>
-                <th scope="col">Date of birth</th>
-                <th scope="col">School year</th>
-                <th scope="col">Mid-Term</th>
-                <th scope="col">End-Term</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>MiCha</td>
-                <td>Le</td>
-                <td>17/09/2001</td>
-                <td>2019</td>
-                <td>8</td>
-                <td>10</td>
-                <td>
-                  <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                    Edit
-                  </button>
-                  
-                  <!-- Modal -->
-                  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <form class="row g-3 needs-validation" novalidate>
-                            <div class="col-md-4 position-relative">
-                              <label for="validationTooltip01" class="form-label">Student ID</label>
-                              <input type="text" class="form-control" id="validationTooltip01" value="19110078" required readonly>
-                            </div>
-                            <div class="col-md-12 position-relative">
-                              <label for="validationTooltip03" class="form-label">Name</label>
-                              <input type="text" class="form-control" id="validationTooltip03" value="Nguyen Thien Hoan" required readonly>
-                            </div>
-                            <div class="col-md-6 position-relative">
-                              <label for="validationTooltip02" class="form-label">Mid-Term</label>
-                              <input type="text" class="form-control" id="validationTooltip02" required>
-                            </div>
-                            <div class="col-md-6 position-relative">
-                              <label for="validationTooltip02" class="form-label">End-Term</label>
-                              <input type="text" class="form-control" id="validationTooltip02" required>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                      </div>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="padding: 48px 24px;">
+                <h2 class="pb-2 border-bottom">Student's mark</h2>
+                <div class="input-group col">
+                    <div class='d-flex'>
+                        <input class="form-control me-2" type="search" placeholder="Last name" aria-label="Search" id="student-input-lastname">
+                        <button class="btn btn-secondary" type="submit" onclick="loadStudent();">Search</button>
                     </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                    <div class="dropdown" style="margin-left: 700px;">
+                        <select class="form-control" id="section-class-card" onchange="loadStudent();">
+                            <option value="+47">Norge (+47)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm" style="margin-top: 30px;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Student ID</th>
+                                <th scope="col">First name</th>
+                                <th scope="col">Last name</th>
+                                <th scope="col">Date of birth</th>
+                                <th scope="col">Mid-Term</th>
+                                <th scope="col">End-Term</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-card">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>MiCha</td>
+                                <td>Le</td>
+                                <td>17/09/2001</td>
+                                <td>2019</td>
+                                <td>8</td>
+                                <td>10</td>
+                                <td>
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                      Edit
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Import
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="./mid_term.html">Mid-Term</a></li>
+                        <li><a class="dropdown-item" href="./end_term.html">End-Term</a></li>
+                    </ul>
+                </div> -->
+                <button class="btn btn-secondary" type="submit" onclick="exportBySectionClassId();">Export</button>
+            </main>
         </div>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Import
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="./mid_term.html">Mid-Term</a></li>
-            <li><a class="dropdown-item" href="./end_term.html">End-Term</a></li>
-          </ul>         
-        </div>
-        <button class="btn btn-secondary" type="submit">Export</button>
-      </main>
     </div>
-  </div>
+
+    <!-- Modal edit-->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-4 position-relative">
+                            <label for="validationTooltip01" class="form-label">Student ID</label>
+                            <input type="text" class="form-control" id="student-edit-id" value="19110078" required readonly>
+                        </div>
+                        <div class="col-md-12 position-relative">
+                            <label for="validationTooltip03" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="student-edit-name" value="Nguyen Thien Hoan" required readonly>
+                        </div>
+                        <div class="col-md-6 position-relative">
+                            <label for="validationTooltip02" class="form-label">Mid-Term</label>
+                            <input type="text" class="form-control" id="student-edit-mid-term" required>
+                        </div>
+                        <div class="col-md-6 position-relative">
+                            <label for="validationTooltip02" class="form-label">End-Term</label>
+                            <input type="text" class="form-control" id="student-edit-end-term" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="editStudent();">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-  <script src="../../Component/component.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+
+    <!-- =================== Request ===================-->
+    <script src="../../Request/connecter.js"></script>
+    <script src="../../Request/BaseRequest.js"></script>
+    <script src="../../Request/LecturerRequest.js"></script>
+    <script src="../../Request/RegisterRequest.js"></script>
+    <script src="../../Request/StudentRequest.js"></script>
+
+    <script src="../../Component/js/component.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>

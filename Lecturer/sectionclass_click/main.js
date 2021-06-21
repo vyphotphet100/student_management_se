@@ -1,53 +1,39 @@
-/* globals Chart:false, feather:false */
+function loadSectionClass() {
+    var sectionClassCard =
+        `<tr>
+          <th scope="row">ID</th>
+          <td>NAME</td>
+          <td>CREDITS</td>
+          <td>ATTENDED</td>
+        </tr>`;
 
-(function () {
-  'use strict'
+    var searchInputId = document.getElementById('section-class-input-search').value;
+    document.getElementById('section-class-card').innerHTML = '';
+    var sectionClassIds = userDto.sectionClassIds;
+    for (var i = 0; i < sectionClassIds.length; i++) {
+        if (sectionClassIds[i].includes(searchInputId) || searchInputId == null) {
+            var sectionClassDto = SectionClassRequest.findOne(sectionClassIds[i]);
+            var sectionClassCardTmp = sectionClassCard;
+            var courseDto = CourseRequest.findOne(sectionClassDto.courseId);
+            var attendedStudents = StudentRequest.findAllBySectionClassId(sectionClassDto.id);
 
-  feather.replace()
-
-  // Graphs
-  var ctx = document.getElementById('myChart')
-  // eslint-disable-next-line no-unused-vars
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ],
-      datasets: [{
-        data: [
-          15339,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034
-        ],
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#007bff'
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: false
-          }
-        }]
-      },
-      legend: {
-        display: false
-      }
+            sectionClassCardTmp = sectionClassCardTmp.replace('ID', sectionClassDto.id);
+            sectionClassCardTmp = sectionClassCardTmp.replace('NAME', sectionClassDto.name);
+            sectionClassCardTmp = sectionClassCardTmp.replace('CREDITS', courseDto.numberOfCredit);
+            sectionClassCardTmp = sectionClassCardTmp.replace('ATTENDED', attendedStudents.length);
+            document.getElementById('section-class-card').innerHTML += sectionClassCardTmp;
+        }
     }
-  })
-})()
+}
+
+function activeSidebar() {
+    setTimeout(function() {
+        document.getElementsByClassName('nav-link')[3].className += ' active';
+    }, 1000);
+}
+
+function main() {
+    loadSectionClass();
+    activeSidebar();
+}
+main();

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Lecturer</title>
+    <title>Manager</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -37,6 +37,7 @@
 </head>
 
 <body>
+
     <div id="header"></div>
 
     <div class="container-fluid">
@@ -46,19 +47,20 @@
             <!-- Notification path -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="container px-4 py-5" id="featured-3">
-                    <h2 class="pb-2 border-bottom">Notifications</h2>
-                    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3" id="noti-card">
-                        <!-- <div class="feature col">
-                            <div class="feature-icon bg-primary bg-gradient">
-                                <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
-                            </div>
-                            <h2>Notification 1</h2>
-                            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                            <a href="#" class="icon-link">
-                              See full notification
-                              <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
-                            </a>
-                        </div> -->
+                    <div class="row border-bottom">
+                        <h2 class="pb-2 col">Notification</h2>
+                    </div>
+
+                    <div class="input-group mb-3" style="margin-top: 30px">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><strong>Title</strong></span>
+                        </div>
+                        <input type="text" class="form-control" id="noti-title" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="input-group-text"><strong>Content</strong></span>
+                        <textarea class="form-control" id="noti-content" rows="15" id="content" readonly></textarea>
                     </div>
                 </div>
             </main>
@@ -75,7 +77,8 @@
     <script src="../../Request/NotificationRequest.js"></script>
 
     <script src="../../Component/js/component.js"></script>
-    <script src="main.js"></script>
+    <script src="../../Component/js/common.js"></script>
+    <script src="see_full_noti_main.js"></script>
 </body>
 
 </html>

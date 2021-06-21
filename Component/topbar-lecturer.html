@@ -1,0 +1,33 @@
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Student MS</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div style="float: right;">
+        <div class="dropdown">
+            <button class="dropbtn">
+            <span data-feather="user"></span>			
+        </button>
+            <div class="dropdown-content">
+                <a href="javascript:hrefProfile('../profile_click/index.html');">View profile</a>
+                <a href="javascript:connecter.logout();">Sign out</a>
+            </div>
+        </div>
+        <a class="navbar-brand col col me-0 px-3" id="user-fullname">Fullname</a>
+    </div>
+
+</header>
+<script>
+    var fullname = userDto.fullname;
+    if (fullname != null)
+        document.getElementById('user-fullname').innerText = fullname;
+    else
+        document.getElementById('user-fullname').innerText = 'Lecturer';
+
+    function hrefProfile(src) {
+        if (window.location.href.includes('/timetable_click/'))
+            window.location.href = '../' + src;
+        else
+            window.location.href = src;
+    }
+</script>

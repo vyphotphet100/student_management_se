@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    if (window.location.href.includes('/student/')) {
+    if (window.location.href.includes('/Student/')) {
         if (window.location.href.includes('/timetable_click/')) {
             $("#sidebarMenu").load('../../../Component/sidebar-student.html', load);
             $("#header").load('../../../Component/topbar-student.html', load);
@@ -9,7 +9,7 @@ $(document).ready(function() {
             $("#sidebarMenu").load('../../Component/sidebar-student.html', load);
         }
 
-    } else if (window.location.href.includes('/manager/')) {
+    } else if (window.location.href.includes('/Manager/')) {
         $("#sidebarMenu").load('../../Component/sidebar-manager.html', load);
         $("#header").load('../../Component/topbar-manager.html', load);
     } else if (window.location.href.includes('/lecturer/')) {

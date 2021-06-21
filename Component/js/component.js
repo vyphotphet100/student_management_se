@@ -12,7 +12,7 @@ $(document).ready(function() {
     } else if (window.location.href.includes('/Manager/')) {
         $("#sidebarMenu").load('../../Component/sidebar-manager.html', load);
         $("#header").load('../../Component/topbar-manager.html', load);
-    } else if (window.location.href.includes('/lecturer/')) {
+    } else if (window.location.href.includes('/Lecturer/')) {
         if (window.location.href.includes('/timetable_click/')) {
             $("#sidebarMenu").load('../../../Component/sidebar-lecturer.html', load);
             $("#header").load('../../../Component/topbar-lecturer.html', load);

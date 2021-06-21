@@ -9,8 +9,8 @@
             <span data-feather="user"></span>			
         </button>
             <div class="dropdown-content">
-                <a href="#">View profile</a>
-                <a href="#">Sign out</a>
+                <a href="javascript:hrefProfile('../profile_click/index.html');">View profile</a>
+                <a href="javascript:connecter.logout();">Sign out</a>
             </div>
         </div>
         <a class="navbar-brand col col me-0 px-3" id="user-fullname">Fullname</a>
@@ -23,4 +23,11 @@
         document.getElementById('user-fullname').innerText = fullname;
     else
         document.getElementById('user-fullname').innerText = 'Education Training';
+
+    function hrefProfile(src) {
+        if (window.location.href.includes('/timetable_click/'))
+            window.location.href = '../' + src;
+        else
+            window.location.href = src;
+    }
 </script>

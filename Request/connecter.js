@@ -1,34 +1,12 @@
 class connecter {
 
     static baseUrlAPI = "https://8be0b7c8580a.ngrok.io";
-    static basePathAfterUrl = "/student_management";
-
-    static authorization() {
-        var userDtoTmp = new UserDTOtmp();
-        userDtoTmp.listRequest.push(document.URL);
-        return $.ajax({
-            url: connecter.baseUrlAPI + '/authorization',
-            type: 'POST',
-            async: false,
-            headers: { 'Authorization': 'Token ' + connecter.getCookie('tokenCode') },
-            contentType: 'application/json',
-            data: JSON.stringify(userDtoTmp),
-            dataType: 'json',
-            success: function(result) {
-                return result;
-            },
-            error: function(error) {
-                connecter.logout();
-                window.location.href = connecter.basePathAfterUrl + "/Login/index.html";
-            }
-        }).responseJSON;
-
-    }
+    static basePathAfterUrl = "/student_management_se";
 
     static logout() {
         connecter.setCookie('username', null, 1);
         connecter.setCookie('tokenCode', null, 1);
-        window.location.href = connecter.basePathAfterUrl + '/loginpage';
+        window.location.href = connecter.basePathAfterUrl + '/LoginPage';
     }
 
     static setCookie(cname, cvalue, exMinutes) {

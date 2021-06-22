@@ -36,3 +36,10 @@ function main() {
     activeSidebar();
 }
 main();
+
+function printExamSchedule() {
+    var studentDto = StudentRequest.printExamSchedule(userDto.id);
+    alert(studentDto.message);
+    if (studentDto.httpStatus == 'OK')
+        location.href = connecter.baseUrlAPI + studentDto.listResult[0] + '?option=getFile';
+}

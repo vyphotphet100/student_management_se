@@ -163,4 +163,21 @@ class StudentRequest {
             }
         }).responseJSON;
     }
+
+    static printExamSchedule(studentId) {
+        return $.ajax({
+            url: connecter.baseUrlAPI + '/api/file/student/' + studentId + '?option=makeExamSchedule',
+            type: 'GET',
+            async: false,
+            headers: { 'Authorization': 'Token ' + connecter.getCookie('tokenCode') },
+            contentType: 'application/json',
+            success: function(result) {
+                return result;
+            },
+            error: function(error) {
+                BaseRequest.authorization(error);
+                return error;
+            }
+        }).responseJSON;
+    }
 }

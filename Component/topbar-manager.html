@@ -1,7 +1,14 @@
+<style>
+    #friday-voice {
+        text-align: center;
+    }
+</style>
+
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Student MS</a>
+    <input type="text" class="navbar-brand col-md-3 col-lg-7 me-0 px-3" id="friday-voice" placeholder="Friday" style="display: none;">
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div style="float: right;">
         <div class="dropdown" style="display: inline-block;">
@@ -10,6 +17,7 @@
             </div>
             <div class="dropdown-content">
                 <a href="../profile_click/index.html">View profile</a>
+                <a href="javascript:voiceClick();">Voice</a>
                 <a href="javascript:connecter.logout();">Sign out</a>
             </div>
         </div>
@@ -19,10 +27,22 @@
     </div>
 
 </header>
+<script src="../../Component/js/speak_lib.js"></script>
+<script src="../../Component/js/speech_recognition.js"></script>
 <script>
     var fullname = userDto.fullname;
     if (fullname != null)
         document.getElementById('user-fullname').innerText = fullname;
     else
         document.getElementById('user-fullname').innerText = 'Education Training';
+
+    function voiceClick() {
+        if (speech.isStarted) {
+            document.getElementById('friday-voice').style.cssText = 'display: none;';
+            speech.stop();
+        } else {
+            document.getElementById('friday-voice').style.cssText = 'display: block;';
+            speech.init();
+        }
+    }
 </script>
